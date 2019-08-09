@@ -29,15 +29,15 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-
+document object model
 2. What is an event?
-
+an event is anything that happens in the window like scroll, load, animations from green sock, click......
 3. What is an event listener?
-
+an event listener listens for a certain thing to happen to run a function for example a click or dblclk leads to a new pg
 4. Why would we convert a NodeList into an Array?
-
+to be able to style call info from it manipulate it
 5. What is a component?
-
+a component is a function it can be used to make code D.R.Y
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
