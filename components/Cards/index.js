@@ -25,10 +25,10 @@ function cardFunction(){
         const articlesData = response.data.articles;
         const articlesValue = 
         Object.values(articlesData);
-        const articlesKeys = Object.keys(articlesData);
+        
 
-        articlesValue.forEach(item, index => {
-            item.forEach(items => { articleCard(items, articlesKeys[index]);
+        articlesValue.forEach(item => {
+            item.forEach(items => { articleCard(items);
 
             
     
@@ -38,11 +38,14 @@ function cardFunction(){
     
     })
     
-    }
+    })
+}
+
+
     
     const view = document.querySelector('.cards-container');
     
-    function articleCard(object){
+    function articleCard(object, index){
     
         console.log(object);
     
@@ -50,13 +53,17 @@ function cardFunction(){
         cardDiv.classList.add('card');
     
         const headlineDiv = document.createElement('div');
+        headlineDiv.classList.add('headline');
+        headlineDiv.textContent = object.headline;
+
+        const authorDiv = document.createElement('div');
         authorDiv.classList.add('author');
     
         const imgDiv = document.createElement('div');
     
         imgDiv.classList.add('img-container');
     
-        const imgTag = document.createElement('span');
+        const imgTag = document.createElement('img');
         imgTag.src = object.authorPhoto;
     
     const spanTag = document.createElement('span');
@@ -70,4 +77,7 @@ function cardFunction(){
     
     view.appendChild(cardDiv);
     }
-    
+
+    cardFunction();
+
+   
