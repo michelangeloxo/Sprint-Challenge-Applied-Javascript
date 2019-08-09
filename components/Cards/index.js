@@ -22,14 +22,17 @@ function cardFunction(){
 
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response =>{
-        const artData = response.data.articles;
-        const artValue = 
-        Object.values(artData);
+        const articlesData = response.data.articles;
+        const articlesValue = 
+        Object.values(articlesData);
+        const articlesKeys = Object.keys(articlesData);
+
+        articlesValue.forEach(item, index => {
+            item.forEach(items => { articleCard(items, articlesKeys[index]);
+
+            
     
-        artValue.forEach(item =>{
-            item.forEach(items => { articleCard(items);
-    
-            })
+            
     
     })
     
