@@ -8,52 +8,26 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-function cardFunction(){
+function axiosFunction(){
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-.then(response =>{
-    const artData = response.data.articles;
-    const artValue = 
-    Object.values(artData);
+    axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then(response =>{
+        const getData = response.data.topics;
 
-    artValue.forEach(item =>{
-        item.forEach(items => { articleCard(items);
-
+        getData.forEach(item =>{
+            insertTopic(item);
         })
-
-})
-
-})
-
+    })
 }
 
-const view = document.querySelector('.cards-container');
+const topicLink = document.querySelector(".topics");
 
-function articleCard(object){
+function insertTopic(newData){
+    const tabDiv = document.createElement('div');
+    tabDiv.classList.add('tab');
+    tabDiv.innerText = newData;
 
-    console.log(object);
-
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add('card');
-
-    const headlineDiv = document.createElement('div');
-    authorDiv.classList.add('author');
-
-    const imgDiv = document.createElement('div');
-
-    imgDiv.classList.add('img-container');
-
-    const imgTag = document.createElement('span');
-imgTag.src = object.authorPhoto;
-
-const spanTag = document.createElement('span');
-spanTag.textContent = object.authorName;
-
-cardDiv.appendChild(headlineDiv);
-cardDiv.appendChild(authorDiv);
-authorDiv.appendChild(imgDiv);
-authorDiv.appendChild(spanTag);
-imgDiv.appendChild(imgTag);
-
-view.appendChild(cardDiv);
+    topicLink.appendChild(tabDiv);
 }
+
+axiosFunction();
