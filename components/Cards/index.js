@@ -54,7 +54,7 @@ function cardFunction(){
         imgDiv.classList.add('img-container');
     
         const imgTag = document.createElement('span');
-    imgTag.src = object.authorPhoto;
+        imgTag.src = object.authorPhoto;
     
     const spanTag = document.createElement('span');
     spanTag.textContent = object.authorName;

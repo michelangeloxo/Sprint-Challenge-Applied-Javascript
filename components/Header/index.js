@@ -11,7 +11,7 @@
 
 function Header (){
 
-let headerDiv = document.createElement('div');
+let header = document.createElement('div');
   header.classList.add('header');
 
 let date = document.createElement('span');
@@ -29,12 +29,12 @@ header.appendChild(date);
 header.appendChild(h1);
 header.appendChild(temp);
 
-return headerDiv; 
+return header; 
 
 }
 
-const head = document.querySelector('.headerContainer');
+const head = document.querySelector('.header-container');
 
-head.prepend(Header());
+head.appendChild(Header());
 
 
